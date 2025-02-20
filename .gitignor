@@ -1,0 +1,42 @@
+# IDE and editor directories
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# Python-related caches and compiled files
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# Test coverage and build directories
+htmlcov/
+dist/
+site/
+coverage.xml
+.coverage*
+docs_build/
+site_build/
+
+# Virtual environments and dependency files
+env/
+env3.*/
+venv/
+
+# Miscellaneous archive and log files
+test.db
+log.txt
+docs.zip
+archive.zip
+
+# Pipenv lock file (if not used in production)
+Pipfile.lock
+
+# Vim temporary files
+*~
+.*.sw?
+.cache/
+
+# macOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
