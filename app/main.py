@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.config import settings
 from app.middlewares.logging import LoggingMiddleware
-from app.routers import gateway
+from app.routers import gateway, service1, service2
 
 # FastAPI instance with metadata (OpenAPI docs)
 app = FastAPI(
