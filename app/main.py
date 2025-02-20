@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.config import settings
 from app.middlewares.logging import LoggingMiddleware
-from app.routers import auth, service1, gateway
+from app.routers import gateway
 
 # FastAPI instance with metadata (OpenAPI docs)
 app = FastAPI(
@@ -14,8 +14,8 @@ app = FastAPI(
 app.add_middleware(LoggingMiddleware)
 
 # routers
-app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
-app.include_router(service1.router, prefix="/service1", tags=["Service1"])
+# app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
+# app.include_router(service1.router, prefix="/service1", tags=["Service1"])
 app.include_router(gateway.router, prefix="/gateway", tags=["Gateway"])
 
 if __name__ == "__main__":
