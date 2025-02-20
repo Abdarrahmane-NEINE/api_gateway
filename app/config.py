@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     RATE_LIMIT: int = 100  # requests per minute
+    IDP_PUBLIC_KEY: str = "key"
 
     # Open-Closed Principle by allowing extension via environment variables.
     class Config:

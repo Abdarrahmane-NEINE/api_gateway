@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.config import settings
 from app.middlewares.logging import LoggingMiddleware
 from app.routers import gateway, service1, service2
-
+from app.routers.auth.verify import router as auth_verify_router
 # FastAPI instance with metadata (OpenAPI docs)
 app = FastAPI(
     title="API Gateway",
@@ -14,9 +14,10 @@ app = FastAPI(
 app.add_middleware(LoggingMiddleware)
 
 # routers
-# app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
-# app.include_router(service1.router, prefix="/service1", tags=["Service1"])
 app.include_router(gateway.router, prefix="/gateway", tags=["Gateway"])
+app.include_router(auth_verify_router, prefix="/auth", tags=["Authentication"])
+app.include_router(service1.router, prefix="/service1", tags=["Service1"])
+app.include_router(service2.router, prefix="/service2", tags=["Service2"])
 
 if __name__ == "__main__":
     import uvicorn
